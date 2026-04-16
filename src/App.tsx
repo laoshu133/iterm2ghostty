@@ -3,8 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import { SiteNav } from "@/components/SiteNav";
+import Home from "./pages/Home";
+import ITerm2ToGhostty from "./pages/ITerm2ToGhostty";
+import P10kToStarship from "./pages/P10kToStarship";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -14,11 +17,15 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <SiteNav />
+        <div className="min-h-[calc(100vh-3.5rem)] terminal-grid">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/iterm2-to-ghostty" element={<ITerm2ToGhostty />} />
+            <Route path="/p10k-to-starship" element={<P10kToStarship />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
