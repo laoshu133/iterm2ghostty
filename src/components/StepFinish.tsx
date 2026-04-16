@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import type { ConversionResult } from "@/lib/iterm2-parser";
 import type { StarshipConversionResult } from "@/lib/p10k-parser";
-import type { MigrationMode } from "./StepSelectMode";
+import type { MigrationMode } from "./StepUpload";
 
 interface StepFinishProps {
   itermResult: ConversionResult | null;

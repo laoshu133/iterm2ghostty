@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { Upload, FileJson, FileCode, AlertCircle } from "lucide-react";
 import { parseITerm2ProfileJSON, type ITerm2Profile } from "@/lib/iterm2-parser";
 import { parseP10kConfig, type P10kConfig } from "@/lib/p10k-parser";
-import type { MigrationMode } from "./StepSelectMode";
+export type MigrationMode = "iterm2" | "p10k" | "both";
 
 interface StepUploadProps {
   mode: MigrationMode;
